@@ -16,11 +16,11 @@ export type SiteConfig = {
 
 export const siteConfig: SiteConfig = {
   brand: {
-    name: "Bureš.cz",
-    domain: "bures.cz",
+    name: "Bureš Marketing",
+    domain: "buresmarketing.cz",
   },
   contact: {
-    email: "marketing.bures@gmail.com",
+    email: "info@buresmarketing.cz",
     phone: "+420604324767",
     phoneDisplay: "+420 604 324 767",
   },
