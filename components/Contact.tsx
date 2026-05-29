@@ -37,6 +37,11 @@ export default function Contact() {
           <div className="mt-8 space-y-1 text-sm text-white/60">
             <p>{contact.email}</p>
             <p>{contact.phoneDisplay}</p>
+            <p className="mt-3">
+              {siteConfig.owner.fullName} · {siteConfig.owner.legalForm} · IČO{" "}
+              {siteConfig.owner.ico}
+            </p>
+            <p>{siteConfig.owner.address}</p>
           </div>
         </Reveal>
       </div>

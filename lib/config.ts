@@ -1,6 +1,7 @@
 export type SiteConfig = {
   brand: { name: string; domain: string };
   contact: { email: string; phone: string; phoneDisplay: string };
+  owner: { fullName: string; legalForm: string; ico: string; address: string };
   hero: { headline: string; perex: string; cta: string; platforms: string[] };
   audience: {
     title: string;
@@ -11,7 +12,7 @@ export type SiteConfig = {
     items: { title: string; description: string }[];
   };
   contactSection: { title: string; perex: string };
-  footer: { ico?: string; privacyHref: string };
+  footer: { privacyHref: string };
 };
 
 export const siteConfig: SiteConfig = {
@@ -23,6 +24,12 @@ export const siteConfig: SiteConfig = {
     email: "info@buresmarketing.cz",
     phone: "+420604324767",
     phoneDisplay: "+420 604 324 767",
+  },
+  owner: {
+    fullName: "Ondřej Bureš",
+    legalForm: "OSVČ",
+    ico: "09371320",
+    address: "Příčná 959, 539 73 Skuteč",
   },
   hero: {
     headline: "Zvyšujeme obrat. Snižujeme PNO.",
@@ -80,7 +87,6 @@ export const siteConfig: SiteConfig = {
     perex: "Napište nám nebo zavolejte. Ozveme se do jednoho pracovního dne.",
   },
   footer: {
-    ico: "09371320",
     privacyHref: "/ochrana-osobnich-udaju",
   },
 };
