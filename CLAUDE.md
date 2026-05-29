@@ -23,12 +23,13 @@ app/
     inquiries/
       route.ts              ← GET/POST/PATCH/DELETE poptávky
 components/
-  Nav.tsx                   ← sticky, backdrop-blur po scrollu
+  Nav.tsx                   ← sticky, backdrop-blur po scrollu + mobilní hamburger
   Hero.tsx
   Stats.tsx
+  AboutMe.tsx               ← O mně – fotka, příběh, highlights
   Audience.tsx              ← Pro koho
   Services.tsx              ← Co děláme (hover: scale + indigo bg)
-  Process.tsx               ← Jak spolupracujeme
+  Process.tsx               ← Jak spolupracujeme (timeline střídavě L/R)
   WhyUs.tsx                 ← Proč my
   Contact.tsx               ← kontakt + poptávkový formulář
   ContactForm.tsx           ← "use client" formulář pro poptávky
@@ -37,6 +38,8 @@ components/
 lib/
   config.ts                 ← typed SiteConfig, jediný zdroj copy
   useReveal.ts              ← IntersectionObserver hook
+public/
+  foto.jpg                  ← profilová fotka Ondřeje
 data/
   inquiries.json            ← lokální úložiště poptávek (v .gitignore)
 ```
@@ -87,7 +90,7 @@ Na produkci (Vercel) nastavit přes: Settings → Environment Variables.
 ## Konvence
 - **Veškerý copy** v `lib/config.ts` (typed `SiteConfig`) – nikdy hardcoded v JSX
 - Tón: **vykání**, B2B profesionální, krátké věty, akční slovesa
-- Sekce mají `id` pro kotvy: `#pro-koho`, `#sluzby`, `#kontakt`
+- Sekce mají `id` pro kotvy: `#o-mne`, `#pro-koho`, `#sluzby`, `#jak-to-funguje`, `#proc-my`, `#kontakt`
 - Gradient přes Tailwind utility (`bg-gradient-to-br`), ne custom CSS
 - Server components default; `"use client"` jen pro interaktivní komponenty (ContactForm, Reveal, Nav scroll)
 
@@ -98,3 +101,5 @@ Na produkci (Vercel) nastavit přes: Settings → Environment Variables.
 - Kotvy fungují i bez JS (`<a href="#x">` + CSS smooth scroll)
 - Sticky nav: `scroll-margin-top` na sekcích
 - Services boxy mají hover efekt: scale 105 % + indigo pozadí + bílý text (duration-300)
+- Process timeline: kroky se střídají vlevo/vpravo (liché vlevo, sudé vpravo)
+- AboutMe: fotka z `public/foto.jpg`, copy v `config.ts` pod klíčem `aboutMe`
