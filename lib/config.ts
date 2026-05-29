@@ -82,7 +82,7 @@ export const siteConfig: SiteConfig = {
     ],
     highlights: [
       { value: "10+", label: "Let v online marketingu" },
-      { value: "mil. Kč", label: "Měsíční spravované rozpočty" },
+      { value: "1+ mil. Kč", label: "Měsíční spravované rozpočty" },
       { value: "50+", label: "Spokojených klientů" },
     ],
     photo: "/foto.jpg",
