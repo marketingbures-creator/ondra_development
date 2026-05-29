@@ -41,14 +41,14 @@ export default function Services() {
         <div className="mt-12 grid gap-8 sm:grid-cols-2">
           {services.items.map((item) => (
             <Reveal key={item.title}>
-              <div className="group rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition hover:border-indigo-200 hover:shadow-md">
-                <div className="mb-4 inline-flex rounded-xl bg-indigo-50 p-3 text-indigo-600 transition group-hover:bg-indigo-100">
+              <div className="group rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition duration-300 ease-in-out hover:scale-105 hover:border-indigo-400 hover:bg-indigo-600 hover:shadow-xl">
+                <div className="mb-4 inline-flex rounded-xl bg-indigo-50 p-3 text-indigo-600 transition duration-300 group-hover:bg-white group-hover:text-indigo-600">
                   {icons[item.icon]}
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900">
+                <h3 className="text-xl font-semibold text-gray-900 transition duration-300 group-hover:text-white">
                   {item.title}
                 </h3>
-                <p className="mt-3 leading-relaxed text-gray-600">
+                <p className="mt-3 leading-relaxed text-gray-600 transition duration-300 group-hover:text-indigo-100">
                   {item.description}
                 </p>
               </div>
