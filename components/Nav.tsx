@@ -6,11 +6,14 @@ import { siteConfig } from "@/lib/config";
 const links = [
   { label: "Pro koho", href: "#pro-koho" },
   { label: "Služby", href: "#sluzby" },
+  { label: "Jak to funguje", href: "#jak-to-funguje" },
+  { label: "Proč my", href: "#proc-my" },
   { label: "Kontakt", href: "#kontakt" },
 ];
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -36,7 +39,18 @@ export default function Nav() {
         >
           {siteConfig.brand.name}
         </a>
-        <div className="flex gap-6">
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className={`flex flex-col gap-1.5 md:hidden ${
+            scrolled ? "text-gray-700" : "text-white"
+          }`}
+          aria-label="Menu"
+        >
+          <span className={`block h-0.5 w-6 bg-current transition-transform ${menuOpen ? "translate-y-2 rotate-45" : ""}`} />
+          <span className={`block h-0.5 w-6 bg-current transition-opacity ${menuOpen ? "opacity-0" : ""}`} />
+          <span className={`block h-0.5 w-6 bg-current transition-transform ${menuOpen ? "-translate-y-2 -rotate-45" : ""}`} />
+        </button>
+        <div className="hidden gap-6 md:flex">
           {links.map((link) => (
             <a
               key={link.href}
@@ -50,6 +64,20 @@ export default function Nav() {
           ))}
         </div>
       </div>
+      {menuOpen && (
+        <div className="border-t border-gray-200 bg-white px-6 py-4 md:hidden">
+          {links.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={() => setMenuOpen(false)}
+              className="block py-2 text-sm font-medium text-gray-700 transition-colors hover:text-indigo-600"
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+      )}
     </nav>
   );
 }
