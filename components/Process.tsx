@@ -18,16 +18,21 @@ export default function Process() {
         <div className="relative mt-16">
           <div className="absolute left-6 top-0 hidden h-full w-px bg-indigo-200 md:left-1/2 md:block" />
           <div className="space-y-12">
-            {process.items.map((item, i) => (
-              <Reveal key={item.step}>
-                <div
-                  className={`relative flex flex-col gap-6 md:flex-row md:items-center ${
-                    i % 2 === 1 ? "md:flex-row-reverse" : ""
-                  }`}
-                >
-                  <div className="flex-1 md:text-right">
-                    {i % 2 === 0 && (
-                      <div className="rounded-2xl bg-white p-6 shadow-sm md:ml-auto md:max-w-md">
+            {process.items.map((item, i) => {
+              const isLeft = i % 2 === 0;
+              return (
+                <Reveal key={item.step}>
+                  <div
+                    className={`relative flex flex-col gap-6 md:flex-row md:items-center ${
+                      isLeft ? "" : "md:flex-row-reverse"
+                    }`}
+                  >
+                    <div className="hidden flex-1 md:block">
+                      <div
+                        className={`rounded-2xl bg-white p-6 shadow-sm md:max-w-md ${
+                          isLeft ? "md:ml-auto md:text-right" : ""
+                        }`}
+                      >
                         <p className="text-sm font-bold uppercase tracking-wider text-indigo-500">
                           Krok {item.step}
                         </p>
@@ -38,43 +43,28 @@ export default function Process() {
                           {item.description}
                         </p>
                       </div>
-                    )}
-                  </div>
-                  <div className="relative z-10 hidden h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-indigo-700 text-lg font-bold text-white shadow-lg md:flex">
-                    {item.step}
-                  </div>
-                  <div className="flex-1">
-                    {i % 2 === 1 && (
-                      <div className="rounded-2xl bg-white p-6 shadow-sm md:max-w-md">
-                        <p className="text-sm font-bold uppercase tracking-wider text-indigo-500">
-                          Krok {item.step}
-                        </p>
-                        <h3 className="mt-2 text-xl font-semibold text-gray-900">
-                          {item.title}
-                        </h3>
-                        <p className="mt-2 leading-relaxed text-gray-600">
-                          {item.description}
-                        </p>
-                      </div>
-                    )}
-                    {i % 2 === 0 && <div className="hidden md:block" />}
-                  </div>
-                  <div className="flex items-center gap-4 md:hidden">
-                    <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-indigo-700 text-sm font-bold text-white">
+                    </div>
+                    <div className="relative z-10 hidden h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-indigo-700 text-lg font-bold text-white shadow-lg md:flex">
                       {item.step}
                     </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-gray-900">
-                        {item.title}
-                      </h3>
-                      <p className="mt-1 text-sm leading-relaxed text-gray-600">
-                        {item.description}
-                      </p>
+                    <div className="hidden flex-1 md:block" />
+                    <div className="flex items-center gap-4 md:hidden">
+                      <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-indigo-700 text-sm font-bold text-white">
+                        {item.step}
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-semibold text-gray-900">
+                          {item.title}
+                        </h3>
+                        <p className="mt-1 text-sm leading-relaxed text-gray-600">
+                          {item.description}
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </Reveal>
-            ))}
+                </Reveal>
+              );
+            })}
           </div>
         </div>
       </div>
