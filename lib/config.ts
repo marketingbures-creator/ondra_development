@@ -11,6 +11,13 @@ export type SiteConfig = {
     platforms: string[];
   };
   stats: { value: string; label: string }[];
+  aboutMe: {
+    title: string;
+    subtitle: string;
+    story: string[];
+    highlights: { value: string; label: string }[];
+    photo: string;
+  };
   audience: {
     title: string;
     subtitle: string;
@@ -65,6 +72,21 @@ export const siteConfig: SiteConfig = {
     { value: "Bez", label: "Dlouhodobých závazků" },
     { value: "24h", label: "Maximální doba odezvy" },
   ],
+  aboutMe: {
+    title: "Kdo za tím stojí",
+    subtitle: "Ondřej Bureš – PPC specialista",
+    story: [
+      "Svou první kampaň v Google Ads jsem spustil ještě na střední. Místo brigády v supermarketu jsem optimalizoval reklamy pro lokální firmy — a zjistil, že mě baví sledovat, jak čísla v účtu rostou víc než moje kapesné.",
+      "Od té doby jsem prošel e-shopy, B2B firmami i startupy. Dnes spravuji kampaně s měsíčními rozpočty v řádech milionů korun. Ale přístup mám pořád stejný: každá koruna musí pracovat.",
+      "Nejsem agentura s desítkou juniorů. Jsem jeden člověk, který vaše kampaně zná do posledního klíčového slova. Když mi napíšete, odpovím já — ne account manager, který váš účet otevřel poprvé dnes ráno.",
+    ],
+    highlights: [
+      { value: "10+", label: "Let v online marketingu" },
+      { value: "mil. Kč", label: "Měsíční spravované rozpočty" },
+      { value: "50+", label: "Spokojených klientů" },
+    ],
+    photo: "/foto.jpg",
+  },
   audience: {
     title: "Pro koho pracujeme",
     subtitle:

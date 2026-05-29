@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { siteConfig } from "@/lib/config";
 
 const links = [
+  { label: "O mně", href: "#o-mne" },
   { label: "Pro koho", href: "#pro-koho" },
   { label: "Služby", href: "#sluzby" },
   { label: "Jak to funguje", href: "#jak-to-funguje" },
