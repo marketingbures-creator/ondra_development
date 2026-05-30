@@ -5,7 +5,7 @@ export default function Hero() {
   const mailtoSubject = encodeURIComponent("Konzultace PPC");
 
   return (
-    <section className="relative flex min-h-[90vh] items-center justify-center overflow-hidden bg-gradient-to-br from-blue-700 via-indigo-700 to-purple-800 px-6 text-white">
+    <section className="relative flex min-h-[90vh] items-center justify-center overflow-hidden bg-gradient-to-br from-blue-700 via-indigo-700 to-purple-800 px-6 pt-20 text-white">
       <div className="absolute inset-0 opacity-10">
         <div className="absolute -left-20 -top-20 h-96 w-96 rounded-full bg-white/20 blur-3xl" />
         <div className="absolute -bottom-20 -right-20 h-96 w-96 rounded-full bg-purple-300/20 blur-3xl" />
