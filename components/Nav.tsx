@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { siteConfig } from "@/lib/config";
 
 const links = [
@@ -32,13 +33,14 @@ export default function Nav() {
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a
-          href="#"
-          className={`text-lg font-bold transition-colors ${
-            scrolled ? "text-gray-900" : "text-white"
-          }`}
-        >
-          {siteConfig.brand.name}
+        <a href="#" className="flex items-center gap-2">
+          <img
+            src="/logo.png"
+            alt={siteConfig.brand.name}
+            className={`h-16 w-auto transition-all ${
+              scrolled ? "brightness-0" : "brightness-0 invert"
+            }`}
+          />
         </a>
         <button
           onClick={() => setMenuOpen(!menuOpen)}
